@@ -31,7 +31,8 @@ var callFriend = function(){
 //Above you're given a callFriend function that returns another function.
 //Do what you need to do in order to call your function and get 'Calling Jake at 435-215-9248' in your console.
 
-  //Code Here
+var inner = callFriend();
+console.log(inner('435-215-9248'));
 
 
 
