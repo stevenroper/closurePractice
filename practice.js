@@ -70,6 +70,59 @@ count() // 4
   After the function has been called N number of times, console.log('STAHHP');
 */
 
+// First rendition of the problem
+var firstFunction = function(cb){
+    var limit = 1;
+    return function() {
+        if(limit === 1) {
+            limit++;
+            cb();
+        }
+    };
+};
+
+var secondFunction = function() {
+    console.log('Second Function done');
+};
+
+var innerFunction = firstFunction(secondFunction);
+innerFunction();
+innerFunction();
+
+
+// Second portion of the problem.
+var firstFunction = function(iterations, cb){
+    var limit = 1;
+    return function() {
+        if (limit < iterations) {
+            limit++;
+            cb();
+        } else if (limit === iterations) {
+            limit++;
+            cb();
+            console.log('STAHHP!');
+        }
+    };
+};
+
+var secondFunction = function() {
+    console.log('Second Function run.');
+};
+
+var innerFunction = firstFunction(5, secondFunction);
+innerFunction();
+innerFunction();
+innerFunction();
+innerFunction();
+innerFunction();
+innerFunction();
+innerFunction();
+innerFunction();
+innerFunction();
+innerFunction();
+
+
+
 
 
 
