@@ -44,12 +44,18 @@ console.log(inner('435-215-9248'));
   Write a function called makeCounter that makes the following code work properly.
 */
 
-  //Code Here
-  var count = makeCounter();
-  count() // 1
-  count() // 2
-  count() // 3
-  count() // 4
+var makeCounter = function() {
+    var counter = 1;
+    return function() {
+        console.log(counter++);
+    };
+};
+
+var count = makeCounter();
+count() // 1
+count() // 2
+count() // 3
+count() // 4
 
 
 
